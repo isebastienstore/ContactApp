@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact App</title>
+
+    <!-- <link rel="stylesheet" href="./lib/themes/themetodolistapp.css" />
+    <link rel="stylesheet" href="./lib/themes/themetodolistapp.min.css" />   -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+     <link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="cordova.js"></script>
+    </head>
+    <body>
+        <div data-role="page" data-theme="a" id="page1">
+            <div data-role="header">
+                <h1>Contacts App</h1>
+            </div>
+            
+            <div data-role="main" id="" class="ui-content">
+                <a href="" data-role="button" data-icon="plus" data-iconpos="right" onclick="addContactLink()" id="add-button">Ajouter</a>
+                <form id="add-form">
+                    <label for="task">Ajouter un contact</label>
+                    <input type="text" name="name" placeholder="nom" id="contactName">
+                    <input type="text" name="prenom" placeholder="prenom" id="contactSecondName">
+                    <input type="tel" name="telephone" placeholder="numero de telephone" id="contactPhoneNumber">
+                    <input type="tel" name="mobilePhone" placeholder="autre numero de telephone" id="contactMobilePhone">
+                    <input type="email" name="email" placeholder="email" id="contactMail">
+                    <input type="button" value="Ajouter" onclick="ajouterContact()" class="ui-btn">
+                    <input type="button" value="Annuler" onclick="annulerButton()">
+                </form>
+                
+                <ul id="contactsList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="rechercher contact">
+
+                </ul>
+
+              
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>By DIC3 Info &copy; 2022</h1>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="header">
+                <h1>Contacts</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <h1>Détail du contact</h1>
+                <div id="contactDetail">
+                    <p>Nom : <span id="contact-name">Nom</span></p>
+                    <p>Prénom : <span id="contactSecond-name"></span></p>
+                    <p>Numéro Portable : <span id="contactMobile-number"></span></p>
+                    <p>Téléphone (fixe) : <span id="contactPhone-number"></span></p>
+                    <p>Email : <span id="contact-email"></span></p>
+                </div>
+                <div>
+                    <a href="" id="on-update" onclick="showUpdateContactForm()" data-role="button" data-icon="edit" data-iconpos="right">Modifier</a>
+                    <a href="" id="on-delete" onclick="deleteContact()" data-role="button" data-icon="delete" data-iconpos="right">Supprimer</a>
+                    <a href="" id="on-acceuil" onclick="acceuil()" data-role="button" >Acceuil</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>By DIC3 Info &copy; 2022</h1>
+            </div>
+        </div>
+        <div data-role="page" id="page3">
+            <div data-role="header">
+                <h1>Contacts</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <h2>Modifier le contact</h2>
+                <a href="" id="on-acceuil" onclick="acceuil()" data-role="button" >Acceuil</a>
+                <form action="" id="update-form">
+                    <label for="contactNameUpdate">Nom: </label>
+                    <input type="text" name="contactNameUpdate" id="contactNameUpdate" placeholder="Nom" required>
+                    <label for="contactSecondNameUpdate">Prenom: </label>
+                    <input type="text" name="contactSecondNameUpdate" id="contactSecondNameUpdate" placeholder="Prénom" required>
+                    <label for="contactMobileNumberUpdate">Mobile: </label>
+                    <input type="text" name="contactMobileNumberUpdate" id="contactMobileNumberUpdate" placeholder="Numéro Portable" required>
+                    <label for="contactPhoneNumberUpdate">Fixe: </label>
+                    <input type="text" name="contactPhoneNumberUpdate" id="contactPhoneNumberUpdate" placeholder="Téléphone (fixe)">
+                    <label for="contactEmailUpdate">Email: </label>
+                    <input type="email" name="contactEmailUpdate" id="contactEmailUpdate" placeholder="Email">
+                    <input class="ui-btn" type="button" value="Modifier" onclick="modifierContact()">
+                    <input type="button" value="Annuler"  onclick="annulerModification()">
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>By DIC3 Info &copy; 2022</h1>
+            </div>
+        </div>
+    </body>
+</html>
